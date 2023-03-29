@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: oauth2-server
+  datasource:
+    username: postgres
+    password: developer
+    url: jdbc:postgresql://localhost:5432/citappdb
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    database: postgresql
+  flyway:
+    user: postgres
+    password: developer
+    url: jdbc:postgresql://localhost:5432/citappdb
+    driver-class-name: org.postgresql.Driver
+server:
+  servlet:
+    context-path: /api/v1
+  port: 8081
+
+app:
+  salt:
+    strength: 10
+    secret: 'HelloWorld!'
+    length: 1024
+    iterations: 4
+    cpu-cost: 8
+    memory-cost: 12
+    parallelization: 4
+    hash-length: 32
+    memory: 4096
